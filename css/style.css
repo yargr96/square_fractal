@@ -6,6 +6,15 @@ html, body {
     margin: 0;
 }
 
+canvas {
+    box-shadow: 0px 0px 23px 0px rgba(0,0,0,0.75);
+}
+
+#el {
+    margin: 10px auto;
+    text-align: center;
+}
+
 #cnv {
     border: 1px solid #000;
     display: block;

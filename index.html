@@ -8,11 +8,40 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <main>
-        <canvas id="cnv" width="500" height="500"></canvas>
-        <input type="range" id="offsetInput" min="0.01" max="0.99" step="0.01" value="0.01">    
-    </main>
+    <div id="el"></div>
+    <div class="controller">
+        <span>Offset</span><br>
+        <input type="range" id="offsetRange" min="0" max="1" step=".01" value="0.1">
+    </div>
+    <div class="controller">
+        <span>Count</span><br>
+        <input type="range" id="countRange" min="0" max="200" step="1" value="100">
+    </div>
+    <div class="controller">
+        <span>Side length</span><br>
+        <input type="range" id="sideLengthRange" min="100" max="700" step="1" value="400">
+    </div>
     
-    <script src="js/index.js"></script>
+    <script src="js/fractal.js"></script>
+    <script>
+        let el = document.getElementById('el');
+        let sqf = new SquareFractal({
+            el: el,
+            sideLength: 400,
+            count: 100
+        });
+
+        document.getElementById('offsetRange').oninput = function() {
+            sqf.offset = this.value;
+        }
+
+        document.getElementById('countRange').oninput = function() {
+            sqf.count = this.value;
+        }
+
+        document.getElementById('sideLengthRange').oninput = function() {
+            sqf.sideLength = this.value;
+        }
+    </script>
 </body>
 </html>
