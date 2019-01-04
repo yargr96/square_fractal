@@ -21,8 +21,10 @@ canvas {
     margin: 10px auto 10px;
 }
 
-#offsetInput {
-    display: block;
-    width: 500px;
-    margin: auto;
+.controller {
+    text-align: center;
+}
+
+.controller input[type=range] {
+    width: 300px;
 }
